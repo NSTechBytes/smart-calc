@@ -1,0 +1,70 @@
+{
+  "name": "smartcalc",
+  "displayName": "SmartCalc",
+  "description": "A VS Code extension providing inline, scientific, and programmer calculator functionalities.",
+  "version": "0.0.1",
+  "publisher": "NSTechBytes",
+  "icon": "images/smart-calc.png",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+"activationEvents": [
+  "onStartupFinished",
+  "onCommand:smartcalc.calculate",
+  "onCommand:smartcalc.openCalculator"
+],
+
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "smartcalc.calculate",
+        "title": "SmartCalc: Calculate Expression"
+      },
+      {
+        "command": "smartcalc.openCalculator",
+        "title": "SmartCalc: Open Calculator Panel"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "smartcalc.calculate",
+        "key": "ctrl+alt+c"
+        
+      },
+      {
+        "command": "smartcalc.openCalculator",
+        "key": "ctrl+alt+shift+c"
+        
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "smartcalc.calculate",
+          "when": "true",
+          "group": "navigation"
+        },
+        {
+          "command": "smartcalc.openCalculator",
+          "when": "true",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NSTechBytes/smart-calc"
+  },
+  "homepage": "https://github.com/NSTechBytes/smart-calc",
+  "bugs": {
+    "url": "https://github.com/NSTechBytes/smart-calc/issues"
+  },
+  "dependencies": {
+    "mathjs": "^11.12.0"
+  }
+}
